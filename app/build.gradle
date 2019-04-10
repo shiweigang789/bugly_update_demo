@@ -13,19 +13,24 @@ android {
         applicationId "com.lovely.pig.buglyupdate"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 4
-        versionName "1.3"
+        versionCode 7
+        versionName "1.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         // 开启multidex
         multiDexEnabled true
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
     }
 
     signingConfigs {
         releaseConfig {
-            keyAlias 'xys'
-            keyPassword 'HHS@#jhjsGT#$%^!@#Ol9394'
-            storeFile file('../keystore/xys_key.keystore')
-            storePassword 'HHS@#jhjsGT#$%^!@#Ol9394'
+            keyAlias 'test'
+            keyPassword '123456'
+            storeFile file('../keystore/test.jks')
+            storePassword '123456'
             v2SigningEnabled true
         }
     }
